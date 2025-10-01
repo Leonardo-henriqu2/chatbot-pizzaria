@@ -1,0 +1,59 @@
+slots:
+  pedido:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+  tamanho:
+    type: text
+    influence_conversation: true
+  endereco:
+    type: text
+    influence_conversation: true
+entities:
+  - pedido
+
+intents:
+  - saudacao
+  - agradecimento
+  - rastreamento_pedido
+  - devolucao
+  - feedback
+  - goodbye
+  - informar_pedido
+  - adeus
+  - perguntar_preco_pizza
+  - simular_entrega
+
+actions:
+  - action_pedir_numero_pedido
+  - action_rastreamento_pedido
+  - action_devolucao
+  - utter_rastreamento_pedido
+  - utter_devolucao
+  - action_check_pizza_price
+  - action_simular_entrega
+  - action_check_pizza_price
+  - action_simular_entrega
+
+
+
+responses:
+  utter_saudacao:
+    - text: "Olá! Como posso ajudar você hoje?"
+  utter_agradecimento:
+    - text: "Obrigado por entrar em contato! Se precisar de mais ajuda, estou aqui."
+  utter_rastreamento_pedido:
+    - text: "Para rastrear seu pedido, por favor forneça o número do pedido."
+  utter_devolucao:
+    - text: "Para iniciar o processo de devolução, por favor forneça o número do pedido."
+  utter_feedback:
+    - text: "Sua opinião é importante para nós! Por favor, deixe seu feedback."
+  utter_goodbye: 
+    - text: "Obrigado por entrar em contato. Até logo!"
+  utter_adeus: 
+    - text: "Obrigado por entrar em contato. Até logo!"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

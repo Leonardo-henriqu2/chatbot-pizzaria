@@ -1,0 +1,54 @@
+version: "3.1"
+
+stories:
+  - story: rastreamento pedido
+    steps:
+      - intent: rastreamento_pedido
+      - action: utter_rastreamento_pedido
+
+  - story: devolucao
+    steps:
+      - intent: devolucao
+      - action: utter_devolucao
+
+  - story: feedback
+    steps:
+      - intent: feedback
+      - action: utter_feedback
+
+  - story: saudacao e agradecimento
+    steps:
+      - intent: saudacao
+      - action: utter_saudacao
+      - intent: agradecimento
+      - action: utter_agradecimento
+
+  - story: adeus
+    steps:
+      - intent: adeus
+      - action: utter_adeus
+
+  - story: rastreamento pedido sem número
+    steps:
+      - intent: rastreamento_pedido
+      - action: action_pedir_numero_pedido
+      - intent: informar_pedido
+      - action: action_rastreamento_pedido
+
+  - story: devolução sem número
+    steps:
+      - intent: devolucao
+      - action: action_pedir_numero_pedido
+      - intent: informar_pedido
+      - action: action_devolucao
+
+  - story: consultar preço da pizza
+    steps:
+    - intent: perguntar_preco_pizza
+    - action: action_check_pizza_price
+
+  - story: simular entrega
+    steps:
+    - intent: simular_entrega
+    - action: action_simular_entrega
+
